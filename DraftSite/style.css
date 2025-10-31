@@ -1,0 +1,141 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(255, 220, 0);
+}
+
+
+
+
+ header {background-color: red;
+    padding: 10px;
+    letter-spacing: 10px;
+  text-align: center;
+  color: black;
+  }
+   canvas {
+  display: block;
+}
+
+/* Flex container for layout */
+.flex-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sketch-wrapper {
+  flex: 0 0 450px; /* Fixed width increased to 450 */
+}
+
+.left-column .sketch-wrapper:first-child {
+  margin-top: 0;
+}
+
+.sketch-wrapper:last-child {
+  margin-right: 30px;
+}
+
+.table-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensure table stays above other content */
+  background-color: rgb(255, 220, 0); /* Match body background */
+  padding: 20px;
+  min-width: 200px;
+}
+
+/* Sketch container styling */
+.sketch-slot {
+  /* width: unset; */
+  /* height: unset; */
+}
+
+.sketch-slot canvas {
+  /* width: unset !important; */
+  /* height: unset !important; */
+}
+
+/* Ensure canvas is exactly sized */
+.sketch-slot canvas {
+  width: 450px !important;
+  height: 450px !important;
+}
+
+/* Remove fixed positioning for sketches so they scroll with the page */
+#breathing-container.sketch-slot,
+#spikes-container.sketch-slot {
+  position: static;
+  left: 20%;
+  right: auto;
+  top: auto;
+  transform: none;
+  z-index: auto;
+  display: block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* Affix the breathing ball sketch to the left edge, a bit off the edge, and keep it responsive to scrolling */
+#breathing-container.sketch-slot {
+  float: none;
+  margin: 20px;
+}
+
+#fractalcircles-container.sketch-slot {
+  margin-left: 20px;
+}
+
+table {
+  font-size: 45px;
+  border: 3px solid black;
+  margin: 0;
+  background-color: rgb(255, 220, 0); /* Match body background */
+  box-shadow: 0 0 20px rgba(0,0,0,0.1); /* Optional: adds subtle shadow */
+}
+
+/* Link styling */
+a {
+  color: blue; /* Default link color */
+  text-decoration: none; /* Remove underline if you want */
+}
+
+a:visited {
+  color: red; /* Color for visited/clicked links */
+}
+
+a:hover {
+  color: white; /* Color when hovering over link */
+}
+
+/* Optional: reduce offset on very small screens */
+@media (max-width: 480px) {
+  .right-column {
+    right: 8px;
+  }
+}
+
+p {
+  margin: 20px;
+}
